@@ -1,0 +1,22 @@
+For example, suppose we have a single letter 'A' in a file. The line in the file has
+length 1. We are not including newlines at the end of the line.
+
+The SHA 256 hash of 'A' is 559AEAD08264D5795D3909718CDD05ABD49572E84FE55590EEF31A88A08FDFFD
+To force the number of leaves in the initial Merkle tree to be even, we create a new leaf
+with 'A'. So far, our initial list looks like  'A' --> 'A' ---||
+
+We construct the first list of hashes from the initial list of values.
+
+Initial list of hashes is h('A') --->  h('A') ---||
+
+The actual hashes appear as follows:
+559AEAD08264D5795D3909718CDD05ABD49572E84FE55590EEF31A88A08FDFFD
+559AEAD08264D5795D3909718CDD05ABD49572E84FE55590EEF31A88A08FDFFD
+
+We concatenate these two hashes and hash the concatenation to compute a new hash.
+
+BE263C0044B95044951327B0D9ABBD7E4E3719CC1AE59B57DF059945616219C1
+
+Since we have only a single line in the file, we are done. 
+
+The Merkel root is BE263C0044B95044951327B0D9ABBD7E4E3719CC1AE59B57DF059945616219C1
